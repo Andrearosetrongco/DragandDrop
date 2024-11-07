@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Image-Description Match Game</h2>
+
+        <!-- Draggable images container -->
+        <div class="images">
+            <div id="img1" class="draggable" draggable="true" data-description="I am a Flower">
+             <img src="Flower.jpg" alt="Image 1">
+            </div>
+            <div id="img2" class="draggable" draggable="true" data-description="I am a Cat">
+                <img src="Cat.jpg" alt="Image 2">
+            </div>
+            <div id="img3" class="draggable" draggable="true" data-description="I am a Perfume">
+                <img src="Perfume.webp" alt="Image 3">
+            </div>
+            <div id="img4" class="draggable" draggable="true" data-description="I am a food">
+                <img src="Food.jpg" alt="Image 4">
+            </div>
+            <div id="img5" class="draggable" draggable="true" data-description="I can fly">
+                <img src="Bird.jpg" alt="Image 5">
+               </div>
+               <div id="img6" class="draggable" draggable="true" data-description="I can Swim">
+                   <img src="Fish.jpg" alt="Image 6">
+               </div>
+               <div id="img7" class="draggable" draggable="true" data-description="I am wearable">
+                   <img src="Clothes.jpg" alt="Image 7">
+               </div>
+               <div id="img8" class="draggable" draggable="true" data-description="I'am flying at night, and sleeping at day">
+                   <img src="Bat.jpg" alt="Image 8">
+               </div> 
+                <div id="img9" class="draggable" draggable="true" data-description="I am your favorite meryenda">
+                <img src="Favorite Meryenda.jpg" alt="Image 9">
+               </div>
+               <div id="img10" class="draggable" draggable="true" data-description="I can be, gold or silver">
+                   <img src="Jewelry.jpg" alt="Image 10">
+               </div>
+            <!-- Add 6 more images as needed -->
+        </div>
+
+        <!-- Droppable descriptions container -->
+        <div class="descriptions">
+            <div id="desc1" class="droppable" data-description="I am a Flower"><p>I am a Flower</p></div>
+            <div id="desc2" class="droppable" data-description="I am a Cat"> <p>I am a Cat</p></div>
+            <div id="desc3" class="droppable" data-description="I am a Perfume"> <p>I am a Perfume</p> </div>
+            <div id="desc4" class="droppable" data-description="I am a food"><p>I am a food</p></div>
+            <div id="desc5" class="droppable" data-description="I can fly"><p>I can fly</p></div>
+            <div id="desc6" class="droppable" data-description="I can Swim"> <p>I can Swim</p></div>
+            <div id="desc7" class="droppable" data-description="I am wearable"> <p>I am wearable</p> </div>
+            <div id="desc8" class="droppable" data-description="I am flying at night, and sleeping at day"><p>I'am flying at night, and sleeping at day</p></div>
+            <div id="desc9" class="droppable" data-description="I am your favorite meryenda"><p>I am your favorite meryenda</p></div>
+            <div id="desc10" class="droppable" data-description="I can be, gold or silver"> <p>I can be, gold or silver</p></div>
+            
+
+            <!-- Add 6 more descriptions as needed -->
+        </div>
+    </div>
+
+    <div class="remarks">
+        <p id="remarks">Match the images with their descriptions!</p>
+    </div>
+
+    <div id="score-board">
+        <p>Your score: <span id="score">0</span></p>
+    </div>
+    
+    <script src="script.js"></script>
+
+   
+</body>
+</html>
