@@ -1,0 +1,183 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, kid-friendly font */
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #f8b88b, #ffed99); /* Soft pastel gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-size: 400% 400%;
+    animation: gradientAnimation 8s ease infinite; /* Smooth gradient animation */
+}
+
+/* Keyframe for gradient animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main container */
+.container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Header styling */
+h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #f8b88b, #ffed99);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8); /* Light glow effect */
+}
+
+/* Draggable images styling */
+.images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.draggable {
+    width: 100px;
+    height: 100px;
+    border: 4px solid #ffb3b3; /* Soft pink border */
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #fff0f0; /* Soft pastel pink background */
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.6); /* Subtle soft shadow */
+    cursor: grab;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.draggable img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* Hover effect for draggable items */
+.draggable:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(255, 182, 193, 0.8); /* More pronounced glow */
+}
+
+/* Droppable description areas styling */
+.descriptions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-bottom: 30px;
+}
+
+.droppable {
+    width: 200px;
+    height: 60px;
+    border: 4px dashed #ffcc80; /* Soft orange dashed border */
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff7e6; /* Light cream background */
+    color: #ff6f61; /* Playful coral red text */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.droppable:hover {
+    background-color: #ffeb99; /* Light yellow background on hover */
+    transform: scale(1.05);
+}
+
+/* Feedback for correct/incorrect match */
+.correct {
+    background-color: #87e4a1; /* Soft green background for correct */
+    color: white;
+    border-color: #87e4a1;
+    animation: correctAnimation 0.5s ease-in-out;
+}
+
+.incorrect {
+    background-color: #f9c2c2; /* Soft red for incorrect */
+    color: white;
+    border-color: #f9c2c2;
+    animation: incorrectAnimation 0.5s ease-in-out;
+}
+
+/* Correct match animation */
+@keyframes correctAnimation {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Incorrect match animation */
+@keyframes incorrectAnimation {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Remarks and score area */
+.remarks {
+    margin-bottom: 30px;
+}
+
+#remarks {
+    font-size: 24px;
+    color: #ffcc80; /* Soft orange text for remarks */
+    text-shadow: 2px 2px 6px rgba(255, 204, 128, 0.8);
+}
+
+/* Scoreboard styling */
+#score-board {
+    font-size: 20px;
+    color: #ffb3b3;
+    font-weight: bold;
+    margin-top: 20px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Add some space between elements */
+.container, .remarks, #score-board {
+    margin-top: 20px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .descriptions {
+        grid-template-columns: 1fr;
+    }
+
+    .draggable {
+        width: 120px;
+        height: 120px;
+    }
+
+    .droppable {
+        width: 200px;
+        height: 70px;
+    }
+}
+
